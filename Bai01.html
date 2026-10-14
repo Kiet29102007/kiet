@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>kiem tra so chan / le </h2>
+    <label for="">Nhap so nguyen</label>
+    <input type="text" id="so">
+    <button onclick="Kiemtra()">kiem tra so chan/so le</button>
+    <p id="ketqua"></p> 
+    <script>
+        function Kiemtra(){
+            let tinh=document.getElementById("so").value;
+            if (tinh % 2 == 0) {
+                document.getElementById("ketqua").innerHTML =
+                    "Đây là số chẵn";
+            } else {
+                document.getElementById("ketqua").innerHTML =
+                    "Đây là số lẻ";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đoán số may mắn</title>
+</head>
+<body>
+    <h2>Đoán số may mắn</h2>
+
+    <label>Nhập số từ 1 đến 10:</label>
+    <input type="number" id="so" min="1" max="10">
+
+    <button onclick="doanSo()">Đoán số</button>
+
+    <p id="ketQua"></p>
+
+    <script>
+        function doanSo() {
+            let so = Number(document.getElementById("so").value);
+
+            if (so < 1 || so > 10 ||
+                document.getElementById("so").value === "" ||
+                !Number.isInteger(so)) {
+                document.getElementById("ketQua").innerHTML =
+                    "Vui lòng nhập số nguyên từ 1 đến 10!";
+            } else {
+                let mayMan = Math.floor(Math.random() * 10) + 1;
+
+                if (so == mayMan) {
+                    document.getElementById("ketQua").innerHTML =
+                        " Chúc mừng! Bạn đã đoán đúng!";
+                } else {
+                    document.getElementById("ketQua").innerHTML =
+                        "Bạn chưa may mắn! Số đúng là " + mayMan;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
